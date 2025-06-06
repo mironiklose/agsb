@@ -21,7 +21,8 @@ import tempfile
 import argparse
 
 # 全局变量
-INSTALL_DIR = Path.home() / ".agsb"  # 用户主目录下的隐藏文件夹，避免root权限
+INSTALL_DIR = Path("/tmp") / ".agsb"
+INSTALL_DIR.mkdir(exist_ok=True)
 CONFIG_FILE = INSTALL_DIR / "config.json"
 SB_PID_FILE = INSTALL_DIR / "sbpid.log"
 ARGO_PID_FILE = INSTALL_DIR / "sbargopid.log"
